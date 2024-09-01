@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/e0c4d4f949.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portofolio Website</title>
+    <link rel="stylesheet" href="Style.css"
+</head>
+<body>
+    <div id="header">
+      <div class="container">
+         <nav>
+            <img src="images/logo.png" class="logo">
+            <ul>
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Services</a></li>
+                <li><a href="#portofolio">Portofolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+         </nav>
+           <div class="header-text">
+              <p>MCA Student</p>
+             <h1>Hi,I'm <span>SHARUK</span><br> From Guntur</h1>
+           </div>
+        </div>
+    </div>
+    <!--------------- about------------------ -->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/Screenshot (1).png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p> Motivated and detail-oriented and a strong foundation in software testing methodologies and tools. 
+                    Seeking to  leverage my theoretical knowledge and practical skills in a challenging testing environment.
+                     Strong problem-solving  abilities, exceptional communication skills, and a quick learner.
+                    </p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experinces</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class= "tab-contents  active-tab" id="skills">
+                        <ul>
+                            <li><span>MANUAL TESTING</span>WRITING TEST CASES</li>
+                            <li><span>AUTOMATION TESTING</span>JAVA SELENIUM</li>
+                            <li><span>AUTOMATION TESTING</span>C# SELENIUM</li>
+    
+                        </ul>
+    
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2022-current</span>MCA</li>
+                            <li><span>2019-2022</span>B.SC COMPUTERS</li>
+                            <li><span>2017-2019</span>INTERMEDIATE</li>
+                            <li><span>2016-2017</span>SSC</li>
+    
+                        </ul>
+    
+                    </div>
+                   
+            </div>
+              
+          
+                    
+        </div>
+    </div>
+</div>
+<!-----------services-------------->
+<div id="Services">
+    <div class="container">
+        <h1 class="sub-title">SKILLS</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-brands fa-js"></i>
+                <h2>Front End </h2>
+                <p>HTML</p>
+                    <p>CSS</p>
+                   <p> JAVA SCRIPT
+                </p>
+                <a href="#">learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-vials"></i>
+                <h2>SELENIUM</h2>
+                <p>X-PATH</p>
+                   <p>WEB-DRIVER</p>
+                  <p> BDD-FRAMEWORK
+                </p>
+                <a href="#">learn more</a>
+            </div>
+            <div>
+                <i class="fa-brands fa-java"></i>
+                <h2>BACKEND</h2>
+                <p>JAVA</p>
+                <P>PYTHON</P>
+                
+                <a href="#">learn more</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!----------------contact--------------->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-brands fa-telegram"></i>sharukshaik695@gmail.com</p>
+                <p><i class="fa-thin fa-phone"></i> +91 9390199434</p>
+                <div class="social-icons">
+                    <a href="http://facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                    <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <a href="images/MD_SHARUK_RESUME.pdf" class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script>
+ 
+   var tablinks =document.getElementsByClassName("tab-links");
+   var tabcontents =document.getElementsByClassName("tab-contents");
+    
+   function opentab(tabname){
+    for(tablink of tablinks){
+        tablink.classList.remove("active-link");
+    }
+    for(tabcontent of tabcontents){
+        tabcontent.classList.remove("active-tab");
+    }
+    event.currentTarget.classList.add("active-link");
+    document.getElementById(tabname).classList.add("active-tab");
+   }
+
+
+
+</script>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbx5OerHWpFxKMpgMy8GNU_vNI59sTk5kHVjxMn8zjhzLcdfaeUzkkjCHrdWLN2ixG-6tw/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+
+    
+    
+</script>
+
+</body>
+</html>
